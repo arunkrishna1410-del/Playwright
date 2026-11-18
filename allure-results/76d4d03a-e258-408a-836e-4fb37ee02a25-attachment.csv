@@ -1,0 +1,6 @@
+email,password,expected_output
+document@gmail.com,,Please enter password
+,Admin@123,Please enter email
+wrong@gmail.com,Wrong@123,Invalid email or password
+,,Please enter email and password
+document@gmail.com,Admin@123,Dashboard

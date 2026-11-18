@@ -1,0 +1,26 @@
+{
+  "default": {
+    "paths": [
+      "features/**/*.feature"
+    ],
+    "import": [
+      "features/support/**/*.js",
+      "features/step_definitions/**/*.js"
+    ],
+    "format": [
+      "progress",
+      "allure-cucumberjs/reporter"
+    ],
+    "formatOptions": {
+      "snippetInterface": "async-await",
+      "resultsDir": "allure-results"
+    },
+    "parallel": 1,
+    "retry": 0,
+    "failFast": false,
+    "dryRun": false,
+    "worldParameters": {
+      "environment": "qa"
+    }
+  }
+}

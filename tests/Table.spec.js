@@ -49,7 +49,7 @@ test('Table',async({page})=>{
 
 })
 
-test.only('testing',async ({page})=>{
+test('testing',async ({page})=>{
     await page.goto("https://testautomationpractice.blogspot.com/");
     let fulltable = await page.locator("#taskTable");
     let column = await fulltable.locator('thead tr th')

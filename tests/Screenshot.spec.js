@@ -20,7 +20,7 @@ test('Single Element Screenshot', async ({page})=>{
     //captures only that element.
 })
 
-test.only('Compare Screenshot', async ({page})=>{
+test('Compare Screenshot', async ({page})=>{
     await page.goto('https://apps.uat.mspsandbox.com/appointment/#/login')
    await expect(page).toHaveScreenshot('LoginPage.png')
    console.log("true")

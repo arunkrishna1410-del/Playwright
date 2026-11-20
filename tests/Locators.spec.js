@@ -49,7 +49,7 @@ test("detial locatorss",async({page})=>{
 
 })
 
-test.only("detial locatorsss",async({page})=>{
+test("detial locatorsss",async({page})=>{
     
     await page.locator('mat-icon').filter({hasText:'visibility_off'}).click();
     

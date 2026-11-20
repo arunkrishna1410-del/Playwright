@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test'
 
-test.only('Get Method', async({request})=>{ //Playwright provides the API request fixture
+test('Get Method', async({request})=>{ //Playwright provides the API request fixture
 
     //Sends an HTTP GET request directly to the server.
     let output = await request.get('https://www.epassport.gov.mw/MalawiIMSService/mis/findTheApplicantSummary?refId=N8000030000119440')
@@ -16,7 +16,7 @@ test('Post Method', async ({request})=>{
    let output =  await request.post('https://www.epassport.gov.mw/card-malawi-service/api/generate/passportNo',
         {
             data:{"rids": ["A008622","A008623","A008624","A008627","A008628","A008629","A008630"]},//This is the data you are sending to the server.
-            Headers:{'Accept': 'application/json'}, //This tells the server that your client prefers to receive JSON. 
+            headers:{'Accept': 'application/json'}, //This tells the server that your client prefers to receive JSON. 
             
         });
      
@@ -30,7 +30,7 @@ test('Put Method', async ({request})=>{
    let output =  await request.put('https://www.epassport.gov.mw/card-malawi-service/api/generate/passportNo',
         {
             data:{"rids": ["A008622","A008623","A008688","A008688","A008628","A008629","A008630"]},
-            Headers:{'Accept': 'application/json'},
+            headers:{'Accept': 'application/json'},
             
         });
      

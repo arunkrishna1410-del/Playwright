@@ -8,7 +8,7 @@ test ('Window Handle', async ()=>{
     await page1.goto('https://apps.uat.mspsandbox.com/appointment/')
 })
 
-test.only ('Handle Multiple Window0', async ()=>{
+test('Handle Multiple Window0', async ()=>{
     test.slow();
     let launchbrowser = await chromium.launch()
     let context = await launchbrowser.newContext()

@@ -98,3 +98,10 @@ let output = arr1.filter(num=>arr2.includes(num)) //[ 3, 4 ]
 console.log(output)*/
 
 //---------------------------------------------------------------------------------------------
+//Find duplicate elements
+//let arr=[0, 1 ,2, 3, 4, 5, 6] - index
+let arr = [1, 2, 3, 2, 4, 1, 5];//-number
+let output = [...arr.filter((num,index)=>
+   arr.indexOf(num)!==index)]//indexOf will will take the number from first whan the index matches..
+console.log(output)
+//--------------------------------------------------------------------------------------------------

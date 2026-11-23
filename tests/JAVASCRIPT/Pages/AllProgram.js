@@ -105,7 +105,18 @@ let output = [...arr.filter((num,index)=>
    arr.indexOf(num)!==index)]//indexOf will will take the number from first whan the index matches..
 console.log(output)*/
 //--------------------------------------------------------------------------------------------------
-let arr1 = [1, 2, 3, 4];
-let arr2 = [3, 4, 5, 6];
-let output = arr1.filter(num=>arr2.includes(num))
+//
+let value = {
+    name : "arun",
+    location:{
+        values : "no 9 west street"
+    }
+}
+// Creates a shallow copy
+let output = structuredClone(value)
+// Update properties (do not use 'let' here)
+output.name = "sanjay"
+output.location.values = "no 10 west street pondy"
+
 console.log(output)
+console.log(value)

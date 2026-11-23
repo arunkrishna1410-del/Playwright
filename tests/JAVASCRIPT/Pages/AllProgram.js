@@ -104,19 +104,126 @@ let arr = [1, 2, 3, 2, 4, 1, 5];//-number
 let output = [...arr.filter((num,index)=>
    arr.indexOf(num)!==index)]//indexOf will will take the number from first whan the index matches..
 console.log(output)*/
-//--------------------------------------------------------------------------------------------------
-//
-let value = {
-    name : "arun",
-    location:{
-        values : "no 9 west street"
+
+//------------------------------------------------------------------------------------------------
+/** //Count vowels
+//finding the vowels in the given character
+let str = "javascript";
+let result = [...str].filter(char=>"aeiou".includes(char)).length;
+console.log(result); */
+
+//----------------------------------------------------------------------------------------------
+/** //Count character occurrences
+let input = "javascriptworkingarun"
+let result = {};//Here, we are creating an empty object.//Because we need to store each character and its count.
+for(let char of input){//It takes every character one by one and stores it in the variable char.
+    if(result[char]){//1.result["j"]now result is empty so false it will move to else j:1,
+                     //it stores in the result in key and value ex..result ={j:1,a:1,v:1,now again a}
+                       
+        result[char]++//now we already have a:1 in result now +1 is 2 = a:2
+    }else{
+        result[char]=1;
     }
 }
-// Creates a shallow copy
-let output = structuredClone(value)
-// Update properties (do not use 'let' here)
-output.name = "sanjay"
-output.location.values = "no 10 west street pondy"
+console.log(result) */
+//------------------------------------------------------------------------------------------------------
+/** //find missing character
+let arr = [1, 2, 3, 5, 6];
+let n = 6;
+let out = n * (n+1)/2 - arr.reduce((num,acc)=>num + acc)
+        //6*(6+1)/2=>6*7/2=>42/2=>21 - 1+2+3+5+6 = 17    
+        //21-17 = 4
+console.log(out)//4 */
 
-console.log(output)
-console.log(value)
+//------------------------------------------------------------------------------------------------------
+/** //Find longest word
+let word = "hi this is arun from pondycherry in ariyur"
+let out = word.split(" ");//[ 'hi', 'this', 'is', 'arun', 'from', 'pondycherry', 'in', 'ariyur' ]
+let output = out.reduce((a,b)=>a.length > b.length ? a:b)
+//1.hi.length > this.length ? a:b -- b true
+//2.this.length > this.is ? a:b -- a true
+//3.this.length > this.arun ? a:b -- a true
+//4.this.length > this.from ? a:b -- a true
+//5.this.length > this.pondycherry ? a:b -- b true
+//6.this.pondycherry > this.in ? a:b -- a true
+//7.this.pondycherry > this.ariyur ? a:b -- a true
+console.log(output);//pondycherry */
+
+//-------------------------------------------------------------------------------------------------------
+/** //Find the first non-repeated character
+let input = "aabbddctdthd"
+let r = {};
+for(let char of input){
+    if(r[char]){
+        r[char]++
+    }else{
+        r[char]=1
+    }
+}
+console.log(r)//{ a: 2, b: 2, d: 4, c: 1, t: 2, h: 1 }
+
+for(let output of input){
+    if(r[output]===1){
+        console.log(output)//c
+        break;
+    }
+} */
+
+//-------------------------------------------------------------------------------------------------------
+/** //Replace vowels in "Tomorrow" with *
+let value = "TomorrOw"
+let out = value.replace(/[aeiou]/gi, "*"); 
+                    // /[aeiou]/-[aeiou] – matches vowels: a, e, i, o, u. 
+                    // g – replaces all matching vowels, not just the first one.
+                    // i – ignores uppercase/lowercase differences.
+                    // * - replace with this one. *
+console.log(out)//T*m*rr*w */
+
+//----------------------------------------------------------------------------------------------------
+/** //Reverse every word without changing word order
+let text = "Java Selenium Testing"
+                ////[ 'Java', 'Selenium', 'Testing' ]
+let splited = text.split(" ").map(word=>word.split("").reverse().join("")).join(" ");//map will retun a new array so we are using this join in last
+console.log(splited)//avaJ muineleS gnitseT
+                                         //["J","a","v","a"]
+                                                        //	["a","v","a","J"]
+                                                                    //"avaJ"  
+*/                                                                    
+//----------------------------------------------------------------------------------------------------------
+/** //Find each character and its count in every word
+let str = "Java Selenium Java API Selenium Testing";
+let word = str.split(" ");//[ 'Java', 'Selenium', 'Java', 'API', 'Selenium', 'Testing' ]
+for(let first of word){
+    let count = {}
+    for(let second of first){
+        count[second] = (count[second]||0)+1;
+    }
+    console.log(first,count)
+}
+*/
+//---------------------------------------------------------------------------------------------------------
+/** //Check whether two strings are anagrams
+let one = "listen"
+let two = "silent"
+let oneoutput = [...one].sort().join("");//eilnst
+let twooutput = [...two].sort().join("");//eilnst
+console.log(oneoutput===twooutput ? "anagrams":"not anagrams")//anagrams *? */
+
+//--------------------------------------------------------------------------------------------------------
+/** //Find duplicate characters and their count
+let input = "programming"
+let r={}
+for(let out of input){
+    if(r[out]){
+        r[out]++
+    }else{
+        r[out]=1
+    }
+}
+for(let output in r){
+    if(r[output]>1){
+        console.log(output,r[output])
+    }
+}
+*/
+//----------------------------------------------------------------------------------------------------------

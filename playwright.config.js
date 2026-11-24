@@ -33,7 +33,9 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-all-retries',
-    
+    launchOptions: {
+    args: ['--disable-gpu'],
+  },
     //Playwright will tell Chromium:
     //"Ignore the certificate trust error and continue loading the UAT application."
     ignoreHTTPSErrors: true,

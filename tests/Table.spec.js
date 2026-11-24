@@ -66,5 +66,3 @@ test('testing',async ({page})=>{
     console.log("true")
     await page.waitForLoadState
 })
-
-

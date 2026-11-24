@@ -1,7 +1,7 @@
 //import { ... } from '@playwright/test': Opens the Playwright engine toolbox on your computer.
 //We are importing test and giving it another name: base.
 //expect: It imports the assertion tool used to check things (like await expect().toBeVisible()).
-import {test as base, expect,page} from '@playwright/test'
+import {test as base, expect} from '@playwright/test'
 
 //export allows us to make something available to other JavaScript files.
                         //extend() is a Playwright Test method used to create custom fixtures by extending the existing test object.//page,browser,context,request
